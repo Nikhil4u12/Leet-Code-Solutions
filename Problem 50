@@ -1,0 +1,21 @@
+class Solution {
+    public double power(double a, long  b){
+         if (b == 0) return 1;
+        double ans = power(a,b/2);
+        if(b %2 == 0) return ans*ans;
+        else return ans *ans*a;
+    }
+    
+    public double myPow(double a, int b) {
+       if (b == 0) return 1;
+
+        long N = b; 
+        if (N < 0) {
+            a = 1 / a;
+            N = -N;
+        }
+
+        return power(a, N);
+    }
+       
+}
