@@ -1,0 +1,20 @@
+class Solution {
+    List<String> ans = new ArrayList<>();
+    public  void binary(String s , int n){
+         
+        int m =s.length();
+        if(m == n){
+             ans.add(s);
+             return;
+        }
+         binary(s + "1", n);
+        if(m ==0 || s.charAt(m-1) =='1' ){
+            binary(s+'0',n);
+           
+        }
+    }
+    public List<String> validStrings(int n) {
+        binary("",n);
+         return ans;
+    }
+}
